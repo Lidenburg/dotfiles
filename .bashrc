@@ -116,18 +116,18 @@ if ! shopt -oq posix; then
   fi
 fi
 
+
+
+# Start of my own additions
+
 export PS1="\[\e[0;31m\]\u@\h:\w\$\[\e[m\] "
 export GOPATH="$HOME/code/go/path"
-export PATH="$PATH:/home/Lidenburg/android/android-sdk-linux/platform-tools:/home/Lidenburg/android/android-sdk-linux/tools"
 
-alias dex2jar="/home/Lidenburg/android/dex2jar-2.0/d2j-dex2jar.sh"
 alias UPDATE="sudo apt update && sudo apt upgrade"
-alias headfollow="/home/Lidenburg/scripts/headfollow.py $@"
+alias armgcc="arm-linux-gnueabi-gcc"
 
 function reverse(){
 	/home/Lidenburg/reverse/reverse/run_plasma.py $@
 }
 
 eval "$(thefuck --alias fk)"
-
-alias armgcc="arm-linux-gnueabi-gcc"
