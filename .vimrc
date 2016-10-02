@@ -26,7 +26,10 @@ set wildmenu
 set hlsearch
 " Tags for OP2 linux kernel source
 set tags=~/code/lxr/tags
-
+" Look for a tags file until home dir is hit
+set tags=./tags;$HOME
+" Always show the statusline
+set laststatus=2
 
 " Color settings
 " Enable 256bit color terminal
@@ -40,6 +43,19 @@ nnoremap <C-t> :tabnew<CR>
 map <C-n> :NERDTreeToggle<CR>
 
 
+" Custom statusline
+" Clear the statusline
+set statusline=
+set statusline=%#todo#
+" Path to file and filename
+set statusline+=[%<%F]
+"set statusline+=%*
+" row n/m (%of file)
+set statusline+=%=\ row:%l/%L\ (%p%%)\ 
+"column of file
+set statusline+=\ col:%c
+
+
 "Plugin options
 
 " If NERDTree is the only window left open, close vim
@@ -47,8 +63,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " Syntastic recommended settings
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
