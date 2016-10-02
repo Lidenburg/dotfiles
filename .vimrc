@@ -5,6 +5,8 @@ set ts=4
 set nocompatible
 filetype off
 
+" To install vundle:
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
@@ -36,4 +38,5 @@ set cc=80
 
 " Color settings
 set t_Co=256
+" https://github.com/tomasr/molokai
 colo molokai
