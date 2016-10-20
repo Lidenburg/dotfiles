@@ -7,7 +7,10 @@ mv ~/.vimrc ~/.old-vimrc
 
 echo "Symlinking from dotfiles to home directory"
 
-ln -s ./bashrc ~/.bashrc
-ln -s ./vimrc ~/.vimrc
+#ln -s ./bashrc ~/.bashrc
+#ln -s ./vimrc ~/.vimrc
+
+ln -s $(pwd)/.bashrc ~/.bashrc
+ln -s $(pwd)/.vimrc ~/.vimrc
 
 echo "Done!"

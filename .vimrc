@@ -35,6 +35,7 @@ set laststatus=2
 " Enable 256bit color terminal
 set t_Co=256
 " Use theme https://github.com/tomasr/molokai
+" wget https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim
 colo molokai
 
 " Custom key bindings
@@ -69,3 +70,10 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" Better clipboard
+set clipboard=unnamedplus
+" Remove all the toolbars and scrollbar in gui vim
+set guioptions-=T
+set guioptions-=m
+set guioptions-=r
