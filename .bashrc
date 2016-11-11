@@ -131,3 +131,7 @@ function reverse(){
 }
 
 eval "$(thefuck --alias fk)"
+
+EDITOR=vim
+VISUAL=$EDITOR
+export EDITOR VISUAL

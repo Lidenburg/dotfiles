@@ -6,7 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 call vundle#end()
 filetype plugin indent on
 
@@ -30,6 +30,8 @@ set tags=~/code/lxr/tags
 set tags=./tags;$HOME
 " Always show the statusline
 set laststatus=2
+" Enable colors for syntax highlighting
+syntax on
 
 " Color settings
 " Enable 256bit color terminal
@@ -73,7 +75,22 @@ let g:syntastic_check_on_wq = 0
 
 " Better clipboard
 set clipboard=unnamedplus
+
 " Remove all the toolbars and scrollbar in gui vim
 set guioptions-=T
 set guioptions-=m
 set guioptions-=r
+
+" Fold away functions
+set foldmethod=syntax
+
+" Bind function keys to switch to tabs
+nnoremap <F1> 1gt
+nnoremap <F2> 2gt
+nnoremap <F3> 3gt
+nnoremap <F4> 4gt
+nnoremap <F5> 5gt
+nnoremap <F6> 6gt
+
+" Always open new tabs to the right, instead of left
+set splitright
