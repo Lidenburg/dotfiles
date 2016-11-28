@@ -58,7 +58,6 @@ set statusline+=%=\ row:%l/%L\ (%p%%)\
 "column of file
 set statusline+=\ col:%c
 
-
 "Plugin options
 
 " If NERDTree is the only window left open, close vim
@@ -66,12 +65,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " Syntastic recommended settings
 set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 " Better clipboard
 set clipboard=unnamedplus
@@ -81,8 +74,12 @@ set guioptions-=T
 set guioptions-=m
 set guioptions-=r
 
-" Fold away functions
+" Fold away functions, but not loops
 set foldmethod=syntax
+set foldnestmax=1
+
+" For python we want to fold based on indentation, otherwise it doesn't work
+autocmd filetype python setlocal foldmethod=indent
 
 " Bind function keys to switch to tabs
 nnoremap <F1> 1gt
@@ -94,3 +91,6 @@ nnoremap <F6> 6gt
 
 " Always open new tabs to the right, instead of left
 set splitright
+
+" Use space to insert a single character
+nmap <space> i <esc>r
