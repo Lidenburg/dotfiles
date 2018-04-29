@@ -41,7 +41,7 @@ set t_Co=256
 colo molokai
 
 " Custom key bindings
-nnoremap <C-t> :tabnew<CR>
+"nnoremap <C-t> :tabnew<CR>
 " Bind CTRL+n to toggle NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
@@ -94,3 +94,24 @@ set splitright
 
 " Use space to insert a single character
 nmap <space> i <esc>r
+
+" Show all ctags matches
+nnoremap <C-]> g<C-]>
+
+" Add cscope files in current dir
+cs add cscope.out
+
+" Add cscope bindings to vim
+"	0 or s: Find this C symbol
+"	1 or g: Find this definition
+"	3 or c: Find functions calling this function
+"	9 or a: Find places where this symbol is assigned a value
+nmap <C-\> :cs find 0 <cword><CR>
+nmap <C-\>s :cs find s <cword><CR>
+
+" D as in defined, more logical
+nmap <C-\>d :cs find g <cword><CR>
+
+" X as in xref, more logical
+nmap <C-\>x :cs find c <cword><CR>
+nmap <C-\>a :cs find a <cword><CR>
