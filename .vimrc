@@ -24,14 +24,18 @@ set ts=4
 set wildmenu
 " Highlight all occurences of a word with '*'
 set hlsearch
-" Tags for OP2 linux kernel source
-set tags=~/code/lxr/tags
 " Look for a tags file until home dir is hit
 set tags=./tags;$HOME
 " Always show the statusline
 set laststatus=2
 " Enable colors for syntax highlighting
 syntax on
+
+" Automatic file type detection
+filetype on
+
+" Show tabs and spaces on empty lines for C files
+let c_space_errors=1
 
 " Color settings
 " Enable 256bit color terminal
@@ -43,7 +47,7 @@ colo molokai
 " Custom key bindings
 "nnoremap <C-t> :tabnew<CR>
 " Bind CTRL+n to toggle NERDTree
-map <C-n> :NERDTreeToggle<CR>
+" map <C-n> :NERDTreeToggle<CR>
 
 
 " Custom statusline
@@ -61,7 +65,7 @@ set statusline+=\ col:%c
 "Plugin options
 
 " If NERDTree is the only window left open, close vim
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Syntastic recommended settings
 set statusline+=%#warningmsg#
@@ -82,12 +86,12 @@ set foldnestmax=1
 autocmd filetype python setlocal foldmethod=indent
 
 " Bind function keys to switch to tabs
-nnoremap <F1> 1gt
-nnoremap <F2> 2gt
-nnoremap <F3> 3gt
-nnoremap <F4> 4gt
-nnoremap <F5> 5gt
-nnoremap <F6> 6gt
+" nnoremap <F1> 1gt
+" nnoremap <F2> 2gt
+" nnoremap <F3> 3gt
+" nnoremap <F4> 4gt
+" nnoremap <F5> 5gt
+" nnoremap <F6> 6gt
 
 " Always open new tabs to the right, instead of left
 set splitright
@@ -115,3 +119,6 @@ nmap <C-\>d :cs find g <cword><CR>
 " X as in xref, more logical
 nmap <C-\>x :cs find c <cword><CR>
 nmap <C-\>a :cs find a <cword><CR>
+
+" fzf from vim
+set rtp+=~/.fzf
