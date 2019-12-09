@@ -2,12 +2,13 @@ set nocompatible
 
 " To install vundle:
 " git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-" Plugin 'scrooloose/syntastic'
-call vundle#end()
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
+"Plugin 'VundleVim/Vundle.vim'
+"Plugin 'scrooloose/nerdtree'
+"Plugin 'rust-lang/rust.vim'
+"" Plugin 'scrooloose/syntastic'
+"call vundle#end()
 filetype plugin indent on
 
 
@@ -122,3 +123,7 @@ nmap <C-\>a :cs find a <cword><CR>
 
 " fzf from vim
 set rtp+=~/.fzf
+
+" Don't automatically open all folds when typing '{', '(' or '"'.
+autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
+autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
