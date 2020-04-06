@@ -19,6 +19,9 @@ ln -s $(pwd)/.vimrc ~/.vimrc
 echo "Adding own additions to bashrc"
 echo 'alias UPDATE="sudo apt update && sudo apt upgrade"' >> ~/.bashrc
 
+echo "Appending/creating tmux.conf"
+echo 'set -g default-terminal "screen-256color"' >> ~/.tmux.conf
+
 if [ -z "`which git`" ]
 then
 	echo "git not found, apt installing"
