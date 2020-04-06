@@ -19,6 +19,8 @@ set cc=80
 set number
 " Enable full mouser support
 set mouse=a
+" To get full mouse support under tmux
+set ttymouse=xterm2
 " Set the width of tabs
 set ts=4
 " Enable tab completion for :e
