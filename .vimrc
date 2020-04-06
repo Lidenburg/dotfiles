@@ -25,6 +25,8 @@ set ts=4
 set wildmenu
 " Highlight all occurences of a word with '*'
 set hlsearch
+" Enable incremental searching
+set is
 " Look for a tags file until home dir is hit
 set tags=./tags;$HOME
 " Always show the statusline
